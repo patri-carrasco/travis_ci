@@ -1,4 +1,15 @@
-# Overview
+
+
+1. [Overview](#schema1)
+2. [Container Setup](#schema2)
+3. [Creating and Using a DockerHub Repository](#schema3)
+
+<hr>
+<a name='schema1'></a>
+
+
+
+# 1. Overview
 
 This is a very simple, bare-bones NodeJS project created for you to use with Docker.
 
@@ -9,12 +20,46 @@ This is a very simple, bare-bones NodeJS project created for you to use with Doc
 - Install dependencies: `npm install`
 - Run server: `node server.js`
 
-## Container Setup
 
-- Build image: `docker build .`
+<hr>
+<a name='schema2'></a>
+
+
+## 2. Container Setup
+
+- Build image: `docker build -t simple-node .  `
 - Run container with image: `docker run {image_id}` where `image_id` can be retrieved by running `docker images` and found under the column `IMAGE ID`
 - You can use the `-d` flag to run the container in the background. This will enable you to run other commands in your terminal while the container is running.
+
 
 ## Container Teardown
 
 - Remove container: `docker kill {container_id}` where `container_id` can be retrieved by running `docker ps` and found under the column `CONTAINER ID`
+
+<hr>
+<a name='schema3'></a>
+
+
+## 3. Creating and Using a DockerHub Repository**
+1. In DockerHub, create a new repository and set it to `Public`
+
+2. In your terminal, login to DockerHub
+
+```bash
+docker login --username={YOUR USERNAME}
+```
+
+3. Tag your local image with the repository name:
+```bash
+docker tag {LOCAL IMAGE NAME} {USERNAME}/{REPOSITORY NAME}
+
+docker tag simple-node patricarrasco/simple-node
+```
+4. Push the image to DockerHub
+```bash
+docker push {TAGGED IMAGE}
+
+docker push patricarrasco/simple-node
+
+```
+
