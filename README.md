@@ -3,6 +3,8 @@
 1. [Overview](#schema1)
 2. [Container Setup](#schema2)
 3. [Creating and Using a DockerHub Repository](#schema3)
+4. [Travis](#schema4)
+5. [Container Teardown](#schema5)
 
 <hr>
 <a name='schema1'></a>
@@ -32,15 +34,11 @@ This is a very simple, bare-bones NodeJS project created for you to use with Doc
 - You can use the `-d` flag to run the container in the background. This will enable you to run other commands in your terminal while the container is running.
 
 
-## Container Teardown
-
-- Remove container: `docker kill {container_id}` where `container_id` can be retrieved by running `docker ps` and found under the column `CONTAINER ID`
-
 <hr>
 <a name='schema3'></a>
 
 
-## 3. Creating and Using a DockerHub Repository**
+## 3. Creating and Using a DockerHub Repository
 1. In DockerHub, create a new repository and set it to `Public`
 
 2. In your terminal, login to DockerHub
@@ -63,3 +61,27 @@ docker push patricarrasco/simple-node
 
 ```
 
+<hr>
+<a name='schema4'></a>
+
+
+## 4. Travis
+
+In travis-ci.com, select repo.
+
+**Environment Variables with Travis**
+
+Travis provides a way to set environment variables without having them exposed. These values will be used during the Travis build process.
+
+- In your TravisCI dashboard, navigate to a repository
+- Navigate to the Settings screen
+- Set values in Environment Variables
+
+
+<hr>
+<a name='schema5'></a>
+
+
+## 5. Container Teardown
+
+- Remove container: `docker kill {container_id}` where `container_id` can be retrieved by running `docker ps` and found under the column `CONTAINER ID`
