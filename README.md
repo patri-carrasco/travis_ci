@@ -76,6 +76,8 @@ Travis provides a way to set environment variables without having them exposed. 
 - In your TravisCI dashboard, navigate to a repository
 - Navigate to the Settings screen
 - Set values in Environment Variables
+  -  DOCKER_PASSWORD
+  - DOCKER_USERNAME
 
 
 <hr>
